@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="template1">
+<head>
+  <meta charset="UTF-8">
+  <title>Ajouter une Référence</title>
+  <link rel="stylesheet" href="/webjars/bootstrap/5.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div layout:fragment="content1">
+<div class="container">
+  <h2 class="mt-4">Ajouter une Référence</h2>
+  <form th:action="@{/ajouter-reference}" th:object="${reference}" method="post">
+    <div class="mb-3">
+      <label for="title" class="form-label">Titre :</label>
+      <input type="text" id="title" name="title" class="form-control" th:field="*{title}" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="authors" class="form-label">Auteurs :</label>
+      <input type="text" id="authors" name="authors" class="form-control" th:field="*{authors}" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="journal" class="form-label">Journal :</label>
+      <input type="text" id="journal" name="journal" class="form-control" th:field="*{journal}" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="year" class="form-label">Année :</label>
+      <input type="date" id="year" name="year" class="form-control" th:field="*{year}" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="hyperlink" class="form-label">Hyperlien :</label>
+      <input type="text" id="hyperlink" name="hyperlink" class="form-control" th:field="*{hyperlink}" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Description :</label>
+      <textarea id="description" name="description" class="form-control" th:field="*{description}" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+  </form>
+</div>
+</div>
+</body>
+</html>

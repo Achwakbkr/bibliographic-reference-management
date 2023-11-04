@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="template1">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Tag</title>
+  <link rel="stylesheet" href="/webjars/bootstrap/5.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div layout:fragment="content1">
+  <div class="container">
+    <h2 class="mt-4">Edit Tag</h2>
+    <form th:object="${tag}" th:action="@{/edit-tag}" method="post">
+      <input type="hidden" th:field="*{id}" />
+      <div class="form-group">
+        <label for="name">name</label>
+        <input type="text" class="form-control" id="name" th:field="*{name}" required>
+      </div>
+      <!-- Ajoutez d'autres champs pour les autres attributs de la référence -->
+      <button type="submit" class="btn btn-primary" > Update</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="template1">
+<head>
+  <meta charset="UTF-8">
+  <title>Accueil</title>
+  <link rel="stylesheet" href="/webjars/bootstrap/5.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div layout:fragment="content1">
+<div class="container">
+  <h2 class="mt-4">Page d'Accueil</h2>
+  <ul class="list-group mt-3">
+    <li class="list-group-item"><a th:href="@{/ajouter-reference}">Ajouter une Référence</a></li>
+    <li class="list-group-item"><a th:href="@{/afficher-reference}">Afficher les Références</a></li>
+    <li class="list-group-item"><a th:href="@{/rechercher-par-tag(tag='votreTag')}">Rechercher par Tag</a></li>
+    <li class="list-group-item"><a th:href="@{/ajouter-tag}">Ajouter un Tag</a></li>
+    <li class="list-group-item"><a th:href="@{/afficher-tag}">Afficher les Tags</a></li>
+    <li class="list-group-item"><a th:href="@{/associate-reference-tag}">Associer un reference à un tag</a></li>
+
+  </ul>
+</div>
+</div>
+</body>
+</html>

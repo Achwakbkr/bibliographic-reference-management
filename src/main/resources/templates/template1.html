@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/5.3.1/css/bootstrap.min.css">
+    <script src="/webjars/bootstrap/5.3.1/css/bootstrap.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="bg-info text-white text-center py-3">
+    <h1 class="h4 mb-0">RefLinker</h1>
+    <p class="mb-0">Organisez vos références bibliographiques avec facilité.Votre assistant pour la recherche et la gestion de données scientifiques</p>
+</header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <span class="navbar-text">Bienvenue!</span>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/}">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-bs-toggle"  id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Actions
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" th:href="@{/ajouter-reference}">Ajouter une Référence</a></li>
+                        <li><a class="dropdown-item" th:href="@{/afficher-reference}">Consulter les Références</a></li>
+                        <li><a class="dropdown-item" th:href="@{/rechercher-par-tag(tag='votreTag')}">Recherche par tag </a></li>
+                        <li><a class="dropdown-item" th:href="@{/ajouter-tag}">Ajouter tags</a></li>
+                        <li><a class="dropdown-item" th:href="@{/afficher-tag}">Consulter les tags</a></li>
+                        <li><a class="dropdown-item" th:href="@{/associate-reference-tag}">associer un reference à un tag</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ms-auto"> <!-- Utilisation de ml-auto pour pousser "[Username]" à droite -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-bs-toggle"  id="navbarDropdownMenuLinkk" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span sec:authentication="name"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkk">
+                        <li><a class="dropdown-item" th:href="@{/logout}">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+
+        </div>
+        </div>
+
+
+
+
+
+</nav>
+<section layout:fragment="content1"></section>
+</body>
+</html>

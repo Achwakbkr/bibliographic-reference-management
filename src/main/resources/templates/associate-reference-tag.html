@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="template1">
+<head>
+  <meta charset="UTF-8">
+  <title>Associer refe</title>
+  <link rel="stylesheet" href="/webjars/bootstrap/5.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div layout:fragment="content1" >
+  <div class="container mt-4" >
+  <h2>Associer Reference avec Tag</h2>
+  <form method="post" action="/associate-reference-tag">
+    <div class="form-group">
+      <label for="id">Select Reference:</label>
+      <select class="form-control" name="id" id="id">
+
+        <option th:each="reference:${referenceList}" th:value="${reference.id}" th:text="${reference.title}"></option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="id_t">Select Tag:</label>
+      <select class="form-control" name="id_t" id="id_t">
+
+        <option th:each="tag:${tagList}" th:value="${tag.id_t}" th:text="${tag.name}"></option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Associate</button>
+  </form>
+</div>
+</div>
+</body>
+</html>
